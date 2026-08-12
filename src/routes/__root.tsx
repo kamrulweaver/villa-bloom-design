@@ -77,21 +77,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Seaweed Luxury Villa | Private Beachfront Villa, Jamaica" },
+      { title: "Seaweed Luxury Villa | Private Oceanfront Villa in Treasure Beach" },
       {
         name: "description",
         content:
-          "A six-bedroom oceanfront villa on Jamaica's south coast. Infinity pool, private chef, spa and staff — book the whole property or one wing.",
+          "Six bedrooms, 270° ocean views, infinity pool, spa and full staff on Jamaica's south coast. Rent the whole property or a single villa.",
       },
       { name: "author", content: "Seaweed Luxury Villa" },
-      { property: "og:title", content: "Seaweed Luxury Villa | Treasure Beach, Jamaica" },
+      { property: "og:title", content: "Seaweed Luxury Villa | Private Oceanfront Villa in Treasure Beach" },
       {
         property: "og:description",
         content:
-          "270-degree ocean views, infinity pool and full villa staff on Jamaica's south coast.",
+          "Six bedrooms, 270° ocean views, infinity pool, spa and full staff on Jamaica's south coast. Rent the whole property or a single villa.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Seaweed Luxury Villa | Private Oceanfront Villa in Treasure Beach" },
+      { name: "twitter:description", content: "Six bedrooms, 270° ocean views, infinity pool, spa and full staff on Jamaica's south coast. Rent the whole property or a single villa." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4315ee9f93182b7e8b12e66cb7ae2031/id-preview-91270641--1c9d414b-3aa6-4dba-87fc-05f998cec8d2.lovable.app-1786507177216.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4315ee9f93182b7e8b12e66cb7ae2031/id-preview-91270641--1c9d414b-3aa6-4dba-87fc-05f998cec8d2.lovable.app-1786507177216.png" },
     ],
     links: [
       {

@@ -40,7 +40,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Six bedrooms, 270° ocean views, infinity pool, spa and full staff on Jamaica's south coast.",
+          "Six bedrooms, 270° ocean views, infinity pool, spa and full staff on Jamaica's south coast. Rent the whole property or a single villa.",
       },
     ],
   }),
