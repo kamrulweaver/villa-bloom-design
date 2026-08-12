@@ -93,9 +93,6 @@ export function SiteHeader() {
           </div>
         </div>
       )}
-      <span className="hidden">
-        <X />
-      </span>
     </header>
   );
 }
