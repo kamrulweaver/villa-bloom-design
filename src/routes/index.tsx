@@ -204,7 +204,7 @@ function Home() {
                 loading="lazy"
                 className="aspect-[4/3] w-full rounded-2xl object-cover shadow-soft"
               />
-              <div className="mt-4 hidden w-2/3 rounded-2xl bg-sand p-6 shadow-soft md:-mt-20 md:ml-auto md:block md:bg-card">
+              <div className="relative z-10 mx-auto -mt-10 w-[88%] rounded-2xl bg-card p-6 shadow-lift md:mr-0 md:ml-auto md:w-2/3">
                 <p className="font-display text-xl text-primary">
                   “Painted in turquoises and sea greens to echo the water it looks over.”
                 </p>
