@@ -12,6 +12,7 @@ import {
   Wind,
 } from "lucide-react";
 
+import { useReveal } from "@/hooks/use-reveal";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
@@ -135,6 +136,8 @@ const REVIEWS = [
 ];
 
 function Home() {
+  useReveal();
+
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -154,15 +157,15 @@ function Home() {
             aria-hidden="true"
           />
           <div className="shell relative flex min-h-[620px] flex-col justify-center py-24 md:min-h-[720px] lg:py-32">
-            <p className="eyebrow text-secondary">Treasure Beach · Jamaica</p>
-            <h1 className="mt-5 max-w-3xl text-4xl leading-[1.08] text-primary-foreground sm:text-5xl lg:text-6xl">
+            <p className="hero-rise eyebrow text-secondary">Treasure Beach · Jamaica</p>
+            <h1 style={{ animationDelay: "0.12s" }} className="hero-rise mt-5 max-w-3xl text-4xl leading-[1.08] text-primary-foreground sm:text-5xl lg:text-6xl">
               A private oceanfront villa, and the whole Caribbean in front of it.
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/80 md:text-lg">
+            <p style={{ animationDelay: "0.24s" }} className="hero-rise mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/80 md:text-lg">
               Six bedrooms across two houses, a two-level infinity pool and 270 degrees of sea — with
               a chef, housekeeper and host from Jakes looking after every day.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div style={{ animationDelay: "0.36s" }} className="hero-rise mt-9 flex flex-col gap-3 sm:flex-row">
               <a href="#booking" className="btn-base btn-primary">
                 Check availability <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
@@ -173,7 +176,7 @@ function Home() {
           </div>
 
           {/* Trust strip */}
-          <div className="shell relative pb-14">
+          <div className="shell reveal relative pb-14">
             <div className="grid gap-px overflow-hidden rounded-xl bg-border shadow-lift sm:grid-cols-2 lg:grid-cols-4">
               {[
                 ["270°", "Ocean views"],
@@ -193,7 +196,7 @@ function Home() {
         </section>
 
         {/* INTRO */}
-        <section id="villa" className="bg-background py-20 lg:py-28">
+        <section id="villa" className="reveal bg-background py-20 lg:py-28">
           <div className="shell grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
             <div className="relative">
               <img
@@ -249,7 +252,7 @@ function Home() {
         </section>
 
         {/* FEATURES */}
-        <section className="bg-sand py-20 lg:py-28">
+        <section className="reveal bg-sand py-20 lg:py-28">
           <div className="shell">
             <div className="max-w-2xl">
               <p className="eyebrow">Villa features</p>
@@ -262,7 +265,7 @@ function Home() {
               {FEATURES.map(({ icon: Icon, title, body }) => (
                 <div
                   key={title}
-                  className="rounded-2xl border border-border bg-card p-8 transition-shadow hover:shadow-soft"
+                  className="lift rounded-2xl border border-border bg-card p-8"
                 >
                   <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-surf">
                     <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
@@ -276,7 +279,7 @@ function Home() {
         </section>
 
         {/* STAYS / RATES */}
-        <section id="rates" className="bg-background py-20 lg:py-28">
+        <section id="rates" className="reveal bg-background py-20 lg:py-28">
           <div className="shell">
             <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div className="max-w-2xl">
@@ -325,7 +328,7 @@ function Home() {
         </section>
 
         {/* EXPERIENCES */}
-        <section id="experiences" className="bg-primary py-20 text-primary-foreground lg:py-28">
+        <section id="experiences" className="reveal bg-primary py-20 text-primary-foreground lg:py-28">
           <div className="shell">
             <div className="max-w-2xl">
               <p className="eyebrow text-secondary">The days here</p>
@@ -362,7 +365,7 @@ function Home() {
         </section>
 
         {/* GALLERY */}
-        <section id="gallery" className="bg-background py-20 lg:py-28">
+        <section id="gallery" className="reveal bg-background py-20 lg:py-28">
           <div className="shell">
             <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div className="max-w-2xl">
@@ -378,22 +381,23 @@ function Home() {
 
             <div className="mt-12 grid auto-rows-[220px] gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {GALLERY.map((img) => (
-                <img
-                  key={img.alt}
-                  src={img.src}
-                  alt={img.alt}
-                  width={1200}
-                  height={900}
-                  loading="lazy"
-                  className={`h-full w-full rounded-xl object-cover ${img.span}`}
-                />
+                <div key={img.alt} className={`zoom-img rounded-xl ${img.span}`}>
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    width={1200}
+                    height={900}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* ECO */}
-        <section className="bg-sand py-20 lg:py-28">
+        <section className="reveal bg-sand py-20 lg:py-28">
           <div className="shell grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
             <div>
               <p className="eyebrow">Eco-conscience</p>
@@ -435,7 +439,7 @@ function Home() {
         </section>
 
         {/* REVIEWS */}
-        <section className="bg-background py-20 lg:py-28">
+        <section className="reveal bg-background py-20 lg:py-28">
           <div className="shell">
             <div className="max-w-2xl">
               <p className="eyebrow">Guest reviews</p>
