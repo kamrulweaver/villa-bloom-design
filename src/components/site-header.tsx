@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
-import logo from "@/assets/seaweed-logo.png.asset.json";
+import logo from "@/assets/seaweed-logo.png";
+
 
 const NAV = [
   { label: "Villa Features", href: "#villa" },
