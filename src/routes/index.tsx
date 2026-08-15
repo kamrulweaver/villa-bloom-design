@@ -565,7 +565,17 @@ function Home() {
   );
 }
 
-function Field({ id, label, type }: { id: string; label: string; type: string }) {
+function Field({
+  id,
+  name,
+  label,
+  type,
+}: {
+  id: string;
+  name?: string;
+  label: string;
+  type: string;
+}) {
   return (
     <div className="flex flex-col gap-2">
       <label
@@ -576,9 +586,11 @@ function Field({ id, label, type }: { id: string; label: string; type: string })
       </label>
       <input
         id={id}
+        name={name ?? id}
         type={type}
         className="h-12 rounded-lg border border-input bg-background px-4 text-sm text-foreground focus:border-ocean focus:outline-none"
       />
     </div>
   );
 }
+
