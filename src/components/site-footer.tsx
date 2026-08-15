@@ -1,5 +1,6 @@
 import { Facebook, Mail, MapPin, Phone, Twitter } from "lucide-react";
-import logo from "@/assets/seaweed-logo.png.asset.json";
+import logo from "@/assets/seaweed-logo.png";
+
 
 export function SiteFooter() {
   return (
@@ -7,13 +8,14 @@ export function SiteFooter() {
       <div className="shell grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4 lg:py-20">
         <div className="lg:col-span-1">
           <img
-            src={logo.url}
+            src={logo}
             alt="Seaweed Luxury Villa"
             width={220}
             height={68}
             loading="lazy"
             className="h-14 w-auto"
           />
+
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-primary-foreground/70">
             A six-bedroom oceanfront villa on Jamaica&apos;s south coast, part of the Jakes
             collection of Treasure Beach villas.
