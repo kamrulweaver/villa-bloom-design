@@ -381,15 +381,16 @@ function Home() {
 
             <div className="mt-12 grid auto-rows-[220px] gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {GALLERY.map((img) => (
-                <img
-                  key={img.alt}
-                  src={img.src}
-                  alt={img.alt}
-                  width={1200}
-                  height={900}
-                  loading="lazy"
-                  className={`h-full w-full rounded-xl object-cover ${img.span}`}
-                />
+                <div key={img.alt} className={`zoom-img rounded-xl ${img.span}`}>
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    width={1200}
+                    height={900}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
               ))}
             </div>
           </div>
