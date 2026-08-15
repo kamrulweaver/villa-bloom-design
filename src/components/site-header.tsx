@@ -20,13 +20,14 @@ export function SiteHeader() {
       <div className="shell flex h-20 items-center justify-between gap-6">
         <Link to="/" className="flex items-center" aria-label="Seaweed Luxury Villa home">
           <img
-            src={logo.url}
+            src={logo}
             alt="Seaweed Luxury Villa"
             width={220}
             height={68}
             className="h-11 w-auto md:h-14"
           />
         </Link>
+
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
           {NAV.map((item) => (
