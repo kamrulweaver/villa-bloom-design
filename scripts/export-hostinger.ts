@@ -28,7 +28,9 @@ async function main() {
   html = html
     .replace(/href="\//g, 'href="')
     .replace(/src="\//g, 'src="')
-    .replace(/url\("\//g, 'url("');
+    .replace(/url\("\//g, 'url("')
+    .replace(/src="__l5e\/assets-v1\/[^"]+"/g, 'src="favicon.png"');
+
 
   // 5. Write the static index.html
   await writeFile(join(distClient, "index.html"), html, "utf-8");
