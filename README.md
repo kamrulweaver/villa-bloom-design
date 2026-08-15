@@ -1,68 +1,45 @@
-# Villa Elevate
+# Seaweed Luxury Villa — Hostinger-ready static site
 
-Design a modern, premium, clean, and conversion-focused homepage for the existing Seaweed Villa website.
+This project is built with TanStack Start and exported to a static HTML bundle that can be uploaded directly to any Hostinger shared-hosting folder or subdomain.
 
-First, analyze the existing website: https://seaweedvilla.com, including its current homepage, available pages (VILLA FEATURES, PHOTOS, STAFF, RATES, and CONTACT US), business information, existing content, brand identity, navigation, and overall site structure.
-
-Also directly analyze the provided:
-
-Existing homepage screenshot
-
-Client logo
-
-Design/reference websites or screenshots
-
-Use the existing website to understand the business and content, then independently determine the best homepage structure, content hierarchy, UX flow, sections, CTAs, and layout. Do NOT require or follow a predefined section list.
-
-Use the client logo to establish the primary brand colors and typography direction, adding tasteful complementary colors where appropriate. Use the provided reference websites/screenshots only as inspiration for visual style, UX patterns, spacing, composition, and overall quality—never copy their design directly.
-
-Create an original, polished, high-end hospitality/villa experience that builds trust, communicates the property’s unique value quickly, showcases the experience visually, and guides visitors naturally toward booking/contacting the villa.
-
-Use relevant high-quality stock images as temporary visuals. The client will replace them with final photography later, so structure image areas to work seamlessly with replacement images.
-
-Design requirements:
-
-Desktop content width: 1250px
-
-Fully responsive: desktop, tablet, and mobile
-
-Modern spacing, typography, visual hierarchy, and premium hospitality aesthetics
-
-Clear and strategically placed CTAs
-
-Strong above-the-fold hero section
-
-Intuitive navigation and conversion flow
-
-Accessible, practical, and realistic for WordPress + Elementor implementation
-
-Avoid unnecessary visual complexity, excessive animations, or effects that would be difficult to reproduce in Elementor
-
-Ensure all sections, components, cards, buttons, image areas, and spacing are practical to build with Elementor
-
-Maintain consistency with the existing website while significantly modernizing its visual presentation
-
-The final output should be a complete, original homepage design—not a redesign that simply copies the references. Prioritize premium visual quality, usability, mobile responsiveness, and conversion.
-
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://villa-bloom-design.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/1c9d414b-3aa6-4dba-87fc-05f998cec8d2).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## Quick start (local development)
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+npm install        # or bun install
+npm run dev        # or bun run dev
 ```
+
+Open `http://localhost:8080` to preview the site.
+
+## Build for Hostinger
+
+Run the export script to generate the static `hostinger/` folder:
+
+```sh
+bun run build:hostinger
+# or, if you prefer npm:
+npm run build:hostinger
+```
+
+This:
+
+1. Builds the project for production.
+2. Renders the homepage to a static `index.html`.
+3. Rewrites all asset paths to relative URLs so the site works from any subdomain or subfolder.
+4. Copies `dist/client` into `hostinger/`.
+5. Adds a `contact.php` handler that receives the enquiry form and emails `reservations@seaweedvilla.com`.
+
+## Upload to Hostinger
+
+1. Download or clone the project from GitHub.
+2. If you haven't already, run `bun run build:hostinger` (or `npm run build:hostinger`).
+3. Upload the **contents** of the `hostinger/` folder — not the folder itself — to your Hostinger `public_html` or subdomain document root.
+4. The enquiry form is sent to `contact.php`, which uses the PHP `mail()` function. Make sure your Hostinger plan supports sending mail, and update the `$to` address in `hostinger/contact.php` if needed.
+
+## Built with
+
+- TanStack Start
+- TypeScript
+- React
+- Tailwind CSS
+
