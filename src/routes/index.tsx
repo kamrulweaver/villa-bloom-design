@@ -506,15 +506,16 @@ function Home() {
             </div>
 
             <form
-              onSubmit={(e) => e.preventDefault()}
+              action="contact.php"
+              method="POST"
               className="rounded-2xl bg-card p-7 text-foreground shadow-lift sm:p-9"
             >
               <div className="grid gap-5 sm:grid-cols-2">
-                <Field id="name" label="Full name" type="text" />
-                <Field id="email" label="Email" type="email" />
-                <Field id="arrive" label="Arrival" type="date" />
-                <Field id="depart" label="Departure" type="date" />
-                <Field id="guests" label="Guests" type="number" />
+                <Field id="name" name="name" label="Full name" type="text" />
+                <Field id="email" name="email" label="Email" type="email" />
+                <Field id="arrive" name="arrive" label="Arrival" type="date" />
+                <Field id="depart" name="depart" label="Departure" type="date" />
+                <Field id="guests" name="guests" label="Guests" type="number" />
                 <div className="flex flex-col gap-2">
                   <label
                     htmlFor="villa-choice"
@@ -524,6 +525,7 @@ function Home() {
                   </label>
                   <select
                     id="villa-choice"
+                    name="villa"
                     className="h-12 rounded-lg border border-input bg-background px-4 text-sm text-foreground focus:border-ocean focus:outline-none"
                   >
                     <option>Whole property</option>
@@ -541,6 +543,7 @@ function Home() {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={3}
                   className="rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground focus:border-ocean focus:outline-none"
                 />
@@ -552,6 +555,7 @@ function Home() {
                 No payment required to enquire.
               </p>
             </form>
+
           </div>
         </section>
       </main>
